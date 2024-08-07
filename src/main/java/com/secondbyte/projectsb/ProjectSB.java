@@ -23,20 +23,22 @@ public class ProjectSB{
 
     public ProjectSB() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+    
         modEventBus.addListener(this::commonSetup);
-
-        MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+    }
+    
+    public void registerEventBus() {
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        // some common setup code
     }
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
