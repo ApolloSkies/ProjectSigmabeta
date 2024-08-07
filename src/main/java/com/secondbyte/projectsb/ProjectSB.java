@@ -24,8 +24,10 @@ public class ProjectSB{
     public ProjectSB() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     
+
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
+       
     }
     
     public void registerEventBus() {
